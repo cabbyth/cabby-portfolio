@@ -500,6 +500,80 @@
             }
         });
 
+    document.addEventListener('contextmenu', (e) => {
+
+        e.preventDefault();
+
+    });
+
+    document.addEventListener('keydown', (e) => {
+
+        if (e.key === 'F12') {
+
+            e.preventDefault();
+
+            return false;
+
+        }
+        
+        if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === 'I') {
+
+            e.preventDefault();
+
+            return false;
+
+        }
+
+        if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === 'J') {
+
+            e.preventDefault();
+
+            return false;
+
+        }
+
+        if ((e.ctrlKey || e.metaKey) && e.key === 'u') {
+
+            e.preventDefault();
+
+            return false;
+
+        }
+
+        if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === 'C') {
+
+            e.preventDefault();
+
+            return false;
+
+        }
+
+    });
+
+    setInterval(function() {
+
+        if (window.devtools && window.devtools.isOpen) {
+
+            eval('debugger');
+
+        } else {
+
+            const start = performance.now();
+
+            eval('debugger');
+
+            const end = performance.now();
+
+            if (end - start > 100) { 
+
+                window.location.reload();
+
+            }
+
+        }
+
+    },500);
+
     </script>
 
 </body>
